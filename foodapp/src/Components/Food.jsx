@@ -10,6 +10,7 @@ const Food = () => {
   const [filtered, setFiltered] = useState([]);
   const [search, setSearch] = useState("");
   const [sort, setSort] = useState("none");
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   const { cart, addToCart } = useCart();
@@ -22,8 +23,12 @@ const Food = () => {
       .then((data) => {
         setFoods(data);
         setFiltered(data);
+        setLoading(false);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        setLoading(false);
+      });
   }, []);
 
   const handleSearch = (e) => {
@@ -91,44 +96,56 @@ const Food = () => {
         </div>
 
         <div className="food-cards">
-          {filtered.map((item) => (
-            <div className="food-card" key={item.id}>
-              <div className="food-img-container">
-                <img
-                  src={
-                    item.image?.startsWith("http")
-                      ? item.image
-                      : `/images/${item.image}`
-                  }
-                  alt={item.name}
-                  className="food-img"
-                />
-                <span className="item-offer">ITEMS AT ₹{item.price}</span>
-              </div>
-              <div className="food-info">
-                <h3 className="food-title">{item.name}</h3>
+          {loading ? (
+            <p style={{ marginTop: "20px", fontSize: "18px" }}>
+              Loading delicious items...
+            </p>
+          ) : (
+            <>
+              {filtered.map((item) => (
+                <div className="food-card" key={item.id}>
+                  <div className="food-img-container">
+                    <img
+                      src={
+                        item.image?.startsWith("http")
+                          ? item.image
+                          : `/images/${item.image}`
+                      }
+                      alt={item.name}
+                      className="food-img"
+                    />
+                    <span className="item-offer">ITEMS AT ₹{item.price}</span>
+                  </div>
+                  <div className="food-info">
+                    <h3 className="food-title">{item.name}</h3>
 
-                <p className="food-meta">
-                  <FcRating className="rating-icon" color="green" size={20} />{" "}
-                  4.3 • 30–40 mins
-                </p>
-                <p className="food-location">Hyderabad</p>
-                <button
-                  className="order-btn"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    addToCart(item);
-                    navigate("/cart");
-                  }}
-                >
-                  {" "}
-                  Add to Cart{" "}
-                </button>
-              </div>
-            </div>
-          ))}
-          {filtered.length === 0 && (
-            <p style={{ marginTop: "20px" }}>No items found.</p>
+                    <p className="food-meta">
+                      <FcRating
+                        className="rating-icon"
+                        color="green"
+                        size={20}
+                      />{" "}
+                      4.3 • 30–40 mins
+                    </p>
+                    <p className="food-location">Hyderabad</p>
+                    <button
+                      className="order-btn"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        addToCart(item);
+                        navigate("/cart");
+                      }}
+                    >
+                      {" "}
+                      Add to Cart{" "}
+                    </button>
+                  </div>
+                </div>
+              ))}
+              {filtered.length === 0 && (
+                <p style={{ marginTop: "20px" }}>No items found.</p>
+              )}
+            </>
           )}
         </div>
       </div>
