@@ -6,8 +6,5 @@ target
 .classpath
 .project
 .settings
-.mvn
-mvnw
-mvnw.cmd
 .DS_Store
 *.log
