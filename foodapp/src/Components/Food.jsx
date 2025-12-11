@@ -105,7 +105,7 @@ const Food = () => {
                 justifyContent: "center",
               }}
             >
-              <p className="loading-text">Loading delicious items...</p>
+              <div className="loading-spinner"></div>
             </div>
           ) : (
             <>

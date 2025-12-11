@@ -131,26 +131,19 @@ body {
   transform: translateY(-5px);
 }
 
-.loading-text {
-  width: 100%;
-  text-align: center;
-  font-size: 1.2rem;
-  color: #666;
-  font-weight: 600;
-  margin-top: 40px;
-  animation: pulse 1.5s infinite;
+.loading-spinner {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #ff5500;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
 }
 
-@keyframes pulse {
-  0% {
-    opacity: 0.6;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.6;
-  }
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 .food-img-container {
