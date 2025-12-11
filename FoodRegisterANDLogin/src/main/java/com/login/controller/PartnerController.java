@@ -12,7 +12,7 @@ import com.login.service.PartnerService;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "http://localhost:5173")
+
 public class PartnerController {
 
     @Autowired

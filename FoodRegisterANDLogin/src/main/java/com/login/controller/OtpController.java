@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.Random;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:5173")
+
 public class OtpController {
 
     // ✅ Load API key from application.properties
@@ -19,7 +19,6 @@ public class OtpController {
 
     // ✅ Temporary in-memory OTP storage
     private Map<String, String> otpStore = new HashMap<>();
-
 
     // ============================
     // ✅ SEND OTP
@@ -46,8 +45,6 @@ public class OtpController {
 
         return ResponseEntity.ok(Map.of("message", "OTP sent to your mobile"));
     }
-
-
 
     // ============================
     // ✅ VERIFY OTP

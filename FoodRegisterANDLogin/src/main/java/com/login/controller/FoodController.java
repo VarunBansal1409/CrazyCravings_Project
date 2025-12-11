@@ -10,7 +10,7 @@ import com.login.service.FoodService;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "http://localhost:5173")
+
 public class FoodController {
 
     @Autowired

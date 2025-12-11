@@ -15,7 +15,9 @@ const Food = () => {
   const { cart, addToCart } = useCart();
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/foods/all")
+    fetch(
+      `${import.meta.env.VITE_API_URL || "http://localhost:8080"}/api/foods/all`
+    )
       .then((res) => res.json())
       .then((data) => {
         setFoods(data);

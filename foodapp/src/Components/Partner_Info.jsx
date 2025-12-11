@@ -28,9 +28,9 @@ const Partner_Info = () => {
     }
 
     let normalized = String(value).replace(/\s+/g, "");
-    let url = `http://localhost:8080/api/partners/byNumber/${encodeURIComponent(
-      normalized
-    )}`;
+    let url = `${
+      import.meta.env.VITE_API_URL || "http://localhost:8080"
+    }/api/partners/byNumber/${encodeURIComponent(normalized)}`;
 
     console.log("Partner_Info: Fetching from URL:", url);
 
@@ -71,7 +71,12 @@ const Partner_Info = () => {
       restaurantName,
     };
     axios
-      .post("http://localhost:8080/api/partners", payload)
+      .post(
+        `${
+          import.meta.env.VITE_API_URL || "http://localhost:8080"
+        }/api/partners`,
+        payload
+      )
       .then((res) => {
         if (value && restaurantName) {
           localStorage.setItem(`restaurantName_${value}`, restaurantName);
@@ -95,7 +100,11 @@ const Partner_Info = () => {
   let deletedata = (id) => {
     console.log("Deleting item:", id);
     axios
-      .delete(`http://localhost:8080/api/partners/${id}`)
+      .delete(
+        `${
+          import.meta.env.VITE_API_URL || "http://localhost:8080"
+        }/api/partners/${id}`
+      )
       .then(() => {
         // Update state locally
         setState(state.filter((item) => item.id !== id));

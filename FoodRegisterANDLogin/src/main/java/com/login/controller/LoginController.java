@@ -13,7 +13,7 @@ import com.login.service.LoginService;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "http://localhost:5173")
+
 public class LoginController {
 
     @Autowired

@@ -38,7 +38,12 @@ const Signup = ({ closeDrawer }) => {
     try {
       const user = { username, email, password };
 
-      const res = await axios.post("http://localhost:8080/api/register", user);
+      const res = await axios.post(
+        `${
+          import.meta.env.VITE_API_URL || "http://localhost:8080"
+        }/api/register`,
+        user
+      );
 
       // Show toast
       if (res.data.toLowerCase().includes("already")) {
@@ -56,7 +61,6 @@ const Signup = ({ closeDrawer }) => {
         closeDrawer();
         navigate("/");
       }, 300);
-
     } catch (err) {
       console.log(err);
       toast.error("Server Error! Try again.");
