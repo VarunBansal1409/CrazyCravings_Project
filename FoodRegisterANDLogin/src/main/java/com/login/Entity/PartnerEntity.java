@@ -8,7 +8,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
 import jakarta.persistence.Table;
 
-@Table(name = "partner_entity")
+import jakarta.persistence.Index;
+
+@Table(name = "partner_entity", indexes = @Index(name = "idx_partner_no", columnList = "partner_no"))
 @Entity
 public class PartnerEntity {
 
@@ -34,11 +36,11 @@ public class PartnerEntity {
     private String image;
 
     public PartnerEntity() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
-	public PartnerEntity(Integer id, String partnerNo, String restaurantName, String name, double price, String image) {
+    public PartnerEntity(Integer id, String partnerNo, String restaurantName, String name, double price, String image) {
         this.id = id;
         this.partnerNo = partnerNo;
         this.restaurantName = restaurantName;
@@ -47,26 +49,57 @@ public class PartnerEntity {
         this.image = image;
     }
 
-    public Integer getId() { return id; }
-    public void setId(Integer id) { this.id = id; }
+    public Integer getId() {
+        return id;
+    }
 
-    public String getPartnerNo() { return partnerNo; }
-    public void setPartnerNo(String partnerNo) { this.partnerNo = partnerNo; }
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-    public String getRestaurantName() { return restaurantName; }
-    public void setRestaurantName(String restaurantName) { this.restaurantName = restaurantName; }
+    public String getPartnerNo() {
+        return partnerNo;
+    }
 
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
+    public void setPartnerNo(String partnerNo) {
+        this.partnerNo = partnerNo;
+    }
 
-    public double getPrice() { return price; }
-    public void setPrice(double price) { this.price = price; }
+    public String getRestaurantName() {
+        return restaurantName;
+    }
 
-    public String getImage() { return image; }
-    public void setImage(String image) { this.image = image; }
+    public void setRestaurantName(String restaurantName) {
+        this.restaurantName = restaurantName;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
 
     @Override
     public String toString() {
-        return "PartnerEntity [id=" + id + ", partnerNo=" + partnerNo + ", restaurantName=" + restaurantName + ", name=" + name + ", price=" + price + ", image=" + image + "]";
+        return "PartnerEntity [id=" + id + ", partnerNo=" + partnerNo + ", restaurantName=" + restaurantName + ", name="
+                + name + ", price=" + price + ", image=" + image + "]";
     }
 }
