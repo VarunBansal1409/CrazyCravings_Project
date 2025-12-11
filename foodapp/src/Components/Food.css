@@ -10,7 +10,7 @@ body {
   padding: 0px 30px;
   display: flex;
   justify-content: space-between;
-  align-items: center; 
+  align-items: center;
   background: #f8f9fa;
   box-shadow: 0px 4px 8px rgba(232, 153, 153, 0.584);
   position: fixed;
@@ -71,7 +71,6 @@ body {
   font-size: 12px;
 }
 
-
 .food-container {
   margin-top: 80px;
   padding: 20px 40px;
@@ -105,17 +104,53 @@ body {
   padding: 20px;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .food-card {
   width: 260px;
   border-radius: 20px;
   overflow: hidden;
   cursor: pointer;
-  transition: 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  background: white;
+  border: 1px solid #f0f0f0;
+  animation: fadeIn 0.6s ease-out forwards;
 }
 
 .food-card:hover {
-  box-shadow: 0px 4px 12px rgba(255, 85, 0, 0.4);
-  transform: scale(1.03);
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+
+.loading-text {
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  font-weight: 600;
+  margin-top: 40px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
 }
 
 .food-img-container {
@@ -136,7 +171,7 @@ body {
   position: absolute;
   bottom: 10px;
   left: 10px;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.6);
   padding: 4px 10px;
   border-radius: 8px;
   font-size: 16px;
@@ -148,15 +183,15 @@ body {
   padding: 10px 5px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; 
-  gap: 4px;               
+  align-items: flex-start;
+  gap: 4px;
 }
 
 .food-title {
   font-size: 18px;
   font-weight: 700;
   margin: 0;
-  text-align: left;       
+  text-align: left;
 }
 
 .food-meta {
@@ -176,7 +211,7 @@ body {
 .order-btn {
   margin-top: 4px;
   padding: 6px 16px;
-  border:1px solid rgb(255, 85, 0);
+  border: 1px solid rgb(255, 85, 0);
   background: white;
   color: rgb(255, 85, 0);
   border-radius: 8px;
@@ -188,5 +223,3 @@ body {
   color: white;
   background: rgb(255, 85, 0);
 }
-
-

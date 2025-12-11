@@ -97,9 +97,16 @@ const Food = () => {
 
         <div className="food-cards">
           {loading ? (
-            <p style={{ marginTop: "20px", fontSize: "18px" }}>
-              Loading delicious items...
-            </p>
+            <div
+              className="loading-container"
+              style={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <p className="loading-text">Loading delicious items...</p>
+            </div>
           ) : (
             <>
               {filtered.map((item) => (
