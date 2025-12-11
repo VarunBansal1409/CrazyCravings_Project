@@ -1,0 +1,111 @@
+.partner-info-container {
+    background: #fff5e8;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+}
+
+.restaurant-container {
+    width: 900px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.restaurant-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.restaurant-header input.restaurant-name {
+    border: none;
+    border-bottom: 2px solid #ff7600;
+    outline: none;
+    padding: 5px;
+    font-size: 28px;
+    color: #ff7600;
+    text-align: center;
+    width: 70%;
+    margin-bottom: 10px;
+    background: transparent;
+}
+
+.restaurant-header input.restaurant-name:focus {
+    border-bottom: 2px solid #e46600;
+}
+
+.restaurant-header p.restaurant-phone {
+    font-size: 18px;
+    color: #333;
+    margin-top: 5px;
+}
+
+.restaurant-form {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+    background: #fff0dd;
+    padding: 18px;
+    border-left: 4px solid #ff7600;
+    border-radius: 10px;
+}
+
+.restaurant-form input {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #ff7600;
+    border-radius: 6px;
+}
+
+.restaurant-form button {
+    padding: 10px 18px;
+    background: #ff7600;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.restaurant-form button:hover {
+    background: #e46500;
+}
+
+.restaurant-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.restaurant-table th {
+    background: #ff7600;
+    color: white;
+    padding: 10px;
+    text-align: left;
+}
+
+.restaurant-table td {
+    padding: 12px;
+    border-bottom: 1px solid #ffd2a3;
+}
+
+.restaurant-table img {
+    width: 70px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.restaurant-delete {
+    padding: 7px 14px;
+    background: #d62828;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.restaurant-delete:hover {
+    background: #b61e1e;
+}

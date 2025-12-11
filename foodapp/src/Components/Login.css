@@ -1,0 +1,51 @@
+.drawer-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 35%;
+    height: 100%;
+    background-color: #f9f9f9;
+    box-shadow: -3px 0 10px rgba(0,0,0,0.2);
+    padding: 20px;  
+    overflow-y: auto;
+    z-index: 1000;
+    animation: slideIn 0.3s ease forwards;
+}
+@keyframes slideIn {
+    from {
+        right: -50%;
+        opacity: 0;
+    }
+    to {
+        right: 0;
+        opacity: 1;
+    }
+}
+.drawer-overlay h2 {
+    color:rgb(255, 85, 0);
+    
+}
+.input {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid rgb(255, 85, 0);
+}
+
+.submit-btn {
+  margin-top: 10px;
+  width: 100px;
+  padding: 10px;
+  background: white;
+  color: rgb(255, 85, 0);
+  border: 1px solid rgb(255, 85, 0);
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.submit-btn:hover {
+  background: rgb(255, 85, 0);
+  color: white;
+}
